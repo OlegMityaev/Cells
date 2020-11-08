@@ -2,6 +2,8 @@ package ru.samsung.itschool.book.cells;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import android.view.LayoutInflater;
@@ -40,12 +42,12 @@ public class CellsActivity extends Activity implements OnClickListener,
 
 
         for (int i = 0; i < HEIGHT; i++)
-            for (int j = 0; j < WIDTH; j++) {
-                //ADD YOUR CODE HERE
-                //....
-
-            }
+            for (int j = 0; j < WIDTH; j++)
+                if (Math.random() >= 0.5) {
+                    cells[i][j].setBackgroundColor(Color.BLACK);
+                }
     }
+
 
     @Override
     public boolean onLongClick(View v) {
@@ -67,7 +69,30 @@ public class CellsActivity extends Activity implements OnClickListener,
         //ADD YOUR CODE HERE
         //....
 
-    }
+        for (int x = 0; x < WIDTH; x++)
+        {
+            int color = ((ColorDrawable) cells[tappedY][tappedX].getBackground()).getColor();
+            if (color == Color.BLACK) {
+                cells[tappedY][x].setBackgroundColor(Color.WHITE);
+            }
+            else {
+                cells[tappedY][x].setBackgroundColor(Color.BLACK);
+            }
+
+            }
+        for (int y = 0; y < WIDTH; y++)
+        {
+            int color = ((ColorDrawable) cells[tappedY][tappedX].getBackground()).getColor();
+            if (color == Color.BLACK) {
+                cells[tappedX][y].setBackgroundColor(Color.WHITE);
+            }
+            else {
+                cells[tappedX][y].setBackgroundColor(Color.BLACK);
+            }
+        }
+        }
+
+
 
 	/*
      * NOT FOR THE BEGINNERS
