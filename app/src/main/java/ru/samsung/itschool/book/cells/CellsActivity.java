@@ -69,10 +69,10 @@ public class CellsActivity extends Activity implements OnClickListener,
         {
             int color = ((ColorDrawable) cells[y][tappedX].getBackground()).getColor();
             if (color == Color.BLACK) {
-                cells[tappedX][y].setBackgroundColor(Color.WHITE);
+                cells[y][tappedX].setBackgroundColor(Color.WHITE);
             }
             else {
-                cells[tappedX][y].setBackgroundColor(Color.BLACK);
+                cells[y][tappedX].setBackgroundColor(Color.BLACK);
             }
         }
 
