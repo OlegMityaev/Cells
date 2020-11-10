@@ -37,16 +37,15 @@ public class CellsActivity extends Activity implements OnClickListener,
 
     void generate() {
 
-        //Эту строку нужно удалить
-        Task.showMessage(this, "Добавьте код в функцию активности generate() для генерации клеточного поля");
-
 
         for (int i = 0; i < HEIGHT; i++)
             for (int j = 0; j < WIDTH; j++)
                 if (Math.random() >= 0.5) {
                     cells[i][j].setBackgroundColor(Color.BLACK);
                 }
-    }
+            }
+
+
 
 
     @Override
@@ -58,8 +57,6 @@ public class CellsActivity extends Activity implements OnClickListener,
 
     @Override
     public void onClick(View v) {
-        //Эту строку нужно удалить
-        Stub.show(this, "Добавьте код в функцию активности onClick() - реакцию на нажатие на клетку");
 
         Button tappedCell = (Button) v;
 
@@ -68,10 +65,20 @@ public class CellsActivity extends Activity implements OnClickListener,
         int tappedY = getY(tappedCell);
         //ADD YOUR CODE HERE
         //....
+        for (int y = 0; y < HEIGHT; y++)
+        {
+            int color = ((ColorDrawable) cells[y][tappedX].getBackground()).getColor();
+            if (color == Color.BLACK) {
+                cells[tappedX][y].setBackgroundColor(Color.WHITE);
+            }
+            else {
+                cells[tappedX][y].setBackgroundColor(Color.BLACK);
+            }
+        }
 
         for (int x = 0; x < WIDTH; x++)
         {
-            int color = ((ColorDrawable) cells[tappedY][tappedX].getBackground()).getColor();
+            int color = ((ColorDrawable) cells[tappedY][x].getBackground()).getColor();
             if (color == Color.BLACK) {
                 cells[tappedY][x].setBackgroundColor(Color.WHITE);
             }
@@ -79,16 +86,6 @@ public class CellsActivity extends Activity implements OnClickListener,
                 cells[tappedY][x].setBackgroundColor(Color.BLACK);
             }
 
-            }
-        for (int y = 0; y < WIDTH; y++)
-        {
-            int color = ((ColorDrawable) cells[tappedY][tappedX].getBackground()).getColor();
-            if (color == Color.BLACK) {
-                cells[tappedX][y].setBackgroundColor(Color.WHITE);
-            }
-            else {
-                cells[tappedX][y].setBackgroundColor(Color.BLACK);
-            }
         }
         }
 
