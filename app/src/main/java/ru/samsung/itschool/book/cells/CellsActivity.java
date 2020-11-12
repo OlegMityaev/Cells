@@ -36,7 +36,7 @@ public class CellsActivity extends Activity implements OnClickListener,
     }
 
     void generate() {
-
+        //создание поля
 
         for (int i = 0; i < HEIGHT; i++)
             for (int j = 0; j < WIDTH; j++)
@@ -50,8 +50,7 @@ public class CellsActivity extends Activity implements OnClickListener,
 
     @Override
     public boolean onLongClick(View v) {
-        //Эту строку нужно удалить
-        Stub.show(this, "Добавьте код в функцию активности onLongClick() - реакцию на долгое нажатие на клетку");
+        //действия после нажатия клетки
         return false;
     }
 
@@ -65,7 +64,7 @@ public class CellsActivity extends Activity implements OnClickListener,
         int tappedY = getY(tappedCell);
         //ADD YOUR CODE HERE
         //....
-
+        //меняем клетки по вертикали
         for (int y = 0; y < HEIGHT; y++)
         {
             int color = ((ColorDrawable) cells[y][tappedX].getBackground()).getColor();
@@ -76,9 +75,10 @@ public class CellsActivity extends Activity implements OnClickListener,
                 cells[y][tappedX].setBackgroundColor(Color.BLACK);
             }
         }
-
+        //меняем клетки по горизонтали
         for (int x = 0; x < WIDTH; x++)
         {
+            // получение цвета клеточки:
             int color = ((ColorDrawable) cells[tappedY][x].getBackground()).getColor();
             if (color == Color.BLACK) {
                 cells[tappedY][x].setBackgroundColor(Color.WHITE);
@@ -88,6 +88,7 @@ public class CellsActivity extends Activity implements OnClickListener,
             }
 
         }
+        //меняем нажатую клетку
         int color1 = ((ColorDrawable) cells[tappedY][tappedX].getBackground()).getColor();
         if (color1 == Color.BLACK) {
             cells[tappedY][tappedX].setBackgroundColor(Color.WHITE);
