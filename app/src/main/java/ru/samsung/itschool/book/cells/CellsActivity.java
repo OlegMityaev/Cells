@@ -20,8 +20,8 @@ import task.Task;
 public class CellsActivity extends Activity implements OnClickListener,
         OnLongClickListener {
 
-    private int WIDTH = 10;
-    private int HEIGHT = 10;
+    private int WIDTH = 9;
+    private int HEIGHT = 14;
 
     private Button[][] cells;
 
@@ -65,6 +65,7 @@ public class CellsActivity extends Activity implements OnClickListener,
         int tappedY = getY(tappedCell);
         //ADD YOUR CODE HERE
         //....
+
         for (int y = 0; y < HEIGHT; y++)
         {
             int color = ((ColorDrawable) cells[y][tappedX].getBackground()).getColor();
@@ -86,6 +87,13 @@ public class CellsActivity extends Activity implements OnClickListener,
                 cells[tappedY][x].setBackgroundColor(Color.BLACK);
             }
 
+        }
+        int color1 = ((ColorDrawable) cells[tappedY][tappedX].getBackground()).getColor();
+        if (color1 == Color.BLACK) {
+            cells[tappedY][tappedX].setBackgroundColor(Color.WHITE);
+        }
+        else{
+            cells[tappedY][tappedX].setBackgroundColor(Color.BLACK);
         }
         }
 

@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Cells.iml" filepath="$PROJECT_DIR$/.idea/modules/Cells.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Cells.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Cells.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Cells/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Рабочий стол-Cells.iml" filepath="$PROJECT_DIR$/.idea/modules/Рабочий стол-Cells.iml" group="Cells" />
     </modules>
   </component>
 </project>
